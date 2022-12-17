@@ -58,7 +58,8 @@
 &trans        &trans        &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &trans        &trans         
 &none         &none         &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &none         &none        
 &none         &none         &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &none         &none             
-                }; 
+                         >;
+               }; 
                 second_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
