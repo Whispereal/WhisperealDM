@@ -54,11 +54,11 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&trans        &trans        &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &trans        &trans       
-&trans        &trans        &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &trans        &trans         
-&trans        &trans        &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &trans        &trans         
-&none         &none         &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &none         &none        
-&none         &none         &trans         &trans         &trans         &trans                        &trans        &trans        &trans        &trans        &none         &none           
+&kp  ESC      &kp  Q        &kp  W         &kp  E         &kp  R         &kp  LBRC                     &kp  RBRC        &kp  KP_N7        &kp  KP_N8        &kp  KP_N9        &kp  P               &trans            
+&kp  TAB      &kp  A        &kp  S         &kp  D         &kp  F         &kp  LPAR                     &kp  RPAR        &kp  KP_N4        &kp  KP_N5        &kp  KP_N6        &kp  KP_MULTIPLY     &kp  KP_PLUS       
+&kp  LSHFT    &kp  Z        &kp  X         &kp  C         &kp  V         &kp  B                        &kp  N           &kp  KP_N1        &kp  KP_N2        &kp  KP_N3        &kp  KP_DIVIDE       &kp  KP_MINUS       
+&none         &none         &kp  LBKT      &kp  RBKT      &trans         &kp  SPACE                    &kp  RET         &trans            &kp  KP_N0        &kp  KP_DOT       &none                &none             
+&none         &none         &kp  LCTRL     &kp  N1        &kp  CAPS      &kp  GRAVE                    &trans           &kp  DEL          &kp  LWIN         &kp  LALT         &none                &none   
                 }; 
         };
 };
