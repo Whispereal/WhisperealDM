@@ -36,11 +36,30 @@
 &kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC       
 &kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT        
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                         &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH       
-&none         &none         &kp  LBKT     &kp  RBKT     &kp  ESC      &kp  SPACE                     &kp  RET      &kp  ESC      &kp  MINUS    &kp  EQUAL    &none         &none           
+&none         &none         &kp  LBKT     &kp  RBKT     &mo  FIRST      &kp  SPACE                     &kp  RET      &kp  ESC      &kp  MINUS    &kp  EQUAL    &none         &none           
 &none         &none         &kp  LCTRL    &kp  N1       &kp  CAPS     &kp  GRAVE                     &kp  ESC      &kp  DEL      &kp  LWIN     &kp  LALT     &none         &none              
                         >;
                 };
-
+                FIRST_layer {
+/* .----------------------------------------------------------------------------------------------------------------------.
+ * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |      |                    |      |  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * | Shift| Boot | Reset|      |      |      |      |                    |      |      |      |      |      |      | Shift|
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * | Ctlr |      |      |  Win |||||||| Alt  |      | Lower|||||||| Raise|      | RAlt ||||||||      |      |      | RCtrl|
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */ /* FIXME boot and reset are not yet locale aware */
+                        bindings = <
+&kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC       
+&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT        
+&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                         &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH       
+&none         &none         &kp  LBKT     &kp  RBKT     &mo  FIRST      &kp  SPACE                     &kp  RET      &kp  ESC      &kp  MINUS    &kp  EQUAL    &none         &none           
+&none         &none         &kp  LCTRL    &kp  N1       &kp  CAPS     &kp  GRAVE                     &kp  ESC      &kp  DEL      &kp  LWIN     &kp  LALT     &none         &none                      
+                }; 
         };
 };
 
