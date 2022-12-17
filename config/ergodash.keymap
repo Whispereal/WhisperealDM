@@ -36,10 +36,10 @@
 &kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T        &kp  MINUS             &kp  EQUAL    &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSLH
 &kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G        &kp  DEL               &kp  BSPC     &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  END               &kp  HOME     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
-&kp  LCTRL    &none         &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  LOWER             &mo  RAISE    &kp  RET      &kp  RALT     &none         &kp  PG_UP    &kp  INS      &kp  RCTRL
+&kp  LCTRL    &none         &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  MO1             &mo  MO2    &kp  RET      &kp  RALT     &none         &kp  PG_UP    &kp  INS      &kp  RCTRL
                         >;
                 };
-                lower_layer {
+                MO1_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |      |                    |      |  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
  * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
@@ -60,7 +60,7 @@
 &trans        &none         &none         &trans        &trans        &none         &trans                 &trans        &none         &trans        &none         &none         &none         &trans
                         >;
                 };
-                raise_layer {
+                MO2_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
