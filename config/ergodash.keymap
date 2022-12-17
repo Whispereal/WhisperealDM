@@ -9,9 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define MO1   1
-#define MO2   2
-#define MO3   3
+#define LOWER   1
+#define RAISE   2
 
 
 / {
@@ -33,14 +32,14 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */
                         bindings = <
-&kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T         &none                 &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC       &none
-&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G         &none                 &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT        &none
-&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B         &none                 &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH       &none
-&none         &none         &kp  LBKT     &kp  RBKT     &mo  MO1      &kp  SPACE     &none                 &kp  RET      &mo  MO2      &kp  MINUS    &kp  EQUAL    &none         &none           &none
-&none         &none         &kp  LCTRL    &kp  N1       &kp  CAPS     &kp  GRAVE     &none                 &mo  MO3      &kp  DEL      &kp  LWIN     &kp  LALT     &none         &none           &none   
+&kp  GRAVE    &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5       &kp  LBKT              &kp  RBKT     &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp  N0       &kp  PSCRN
+&kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T        &kp  MINUS             &kp  EQUAL    &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSLH
+&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G        &kp  DEL               &kp  BSPC     &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT
+&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  END               &kp  HOME     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
+&kp  LCTRL    &none         &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  LOWER             &mo  RAISE    &kp  RET      &kp  RALT     &none         &kp  PG_UP    &kp  INS      &kp  RCTRL
                         >;
                 };
-                MO1_layer {
+                lower_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |      |                    |      |  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
  * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
@@ -54,13 +53,14 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&trans        &trans        &trans         &trans         &trans         &kp  LBRC    &none                 &kp  RBRC        &kp  KP_N7        &kp  KP_N8        &kp  KP_N9        &trans                  &trans            &none
-&trans        &trans        &trans         &trans         &trans         &kp  LPAR    &none                 &kp  RPAR        &kp  KP_N4        &kp  KP_N5        &kp  KP_N6        &kp  KP_MULTIPLY        &kp  KP_PLUS      &none   
-&trans        &trans        &trans         &trans         &trans         &trans       &none                 &trans           &kp  KP_N1        &kp  KP_N2        &kp  KP_N3        &kp  KP_DIVIDE          &kp  KP_MINUS     &none    
-&none         &none         &trans         &trans         &trans         &trans       &none                 &trans           &trans            &kp  KP_N0        &kp  E            &none                   &none             &none
-&none         &none         &trans         &trans         &trans         &trans       &none                 &trans           &trans            &trans            &trans            &none                   &none             &none
+&kp  F11      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp  &none             &kp  &none    &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  F12
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&trans        &bootloader   &reset        &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &trans
+&trans        &none         &none         &trans        &trans        &none         &trans                 &trans        &none         &trans        &none         &none         &none         &trans
+                        >;
                 };
-                MO2_layer {
+                raise_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
@@ -74,14 +74,12 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&trans        &trans        &trans         &kp  UP        &trans         &trans       &none                 &trans        &trans        &KP_NUMLOCK        &trans        &trans        &kp  C_MUTE       &none
-&trans        &trans        &kp  LEFT      &kp  DOWN      &kp  RIGHT     &trans       &none                 &trans        &kp  HOME     &kp  END           &kp  PG_UP    &kp  DOWN     &kp  C_VOL_UP     &none   
-&trans        &kp  N1       &kp  N2        &kp  N3        &kp  N4        &kp  N5      &none                 &kp  N6       &kp  N7       &kp  N8            &kp  N9       &kp  N0       &kp  C_VOL_DN     &none   
-&none         &none         &trans         &trans         &trans         &trans       &none                 &trans        &trans        &trans             &trans        &none         &none             &none
-&none         &none         &trans         &trans         &trans         &trans       &none                 &trans        &trans        &trans             &trans        &none         &none             &none
+&none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none         &bt BT_CLR             &none         &none         &none         &none         &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&trans        &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &bootloader   &reset        &trans
+&trans        &none         &none         &trans        &trans        &none         &trans                 &trans        &none         &trans        &none         &none         &none         &trans
                         >;
                 };
-               
         };
 };
-
