@@ -75,8 +75,8 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&trans        &trans        &trans         &kp  UP        &trans         &trans     &none             &none       &trans        &trans        &kp  KP_NUMLOCK    &trans        &trans        &kp  C_MUTE       
-&trans        &trans        &kp  LEFT      &kp  DOWN      &kp  RIGHT     &trans     &none             &none       &trans        &kp  HOME     &kp  END           &kp  PG_UP    &kp  DOWN     &kp  C_VOL_UP        
+&trans        &trans        &trans         &kp  UP        &trans         &kp  LBRC     &none             &none       &kp  RBRC        &trans        &kp  KP_NUMLOCK    &trans        &trans        &kp  C_MUTE       
+&trans        &trans        &kp  LEFT      &kp  DOWN      &kp  RIGHT     &kp  LPAR     &none             &none       &kp  RPAR        &kp  HOME     &kp  END           &kp  PG_UP    &kp  DOWN     &kp  C_VOL_UP        
 &trans        &kp  N1       &kp  N2        &kp  N3        &kp  N4        &kp  N5    &none             &none       &kp  N6       &kp  N7       &kp  N8            &kp  N9       &kp  N0       &kp  C_VOL_DN       
 &none         &none         &trans         &trans         &trans         &trans     &none             &none       &trans        &trans        &trans             &trans        &none         &none             
 &none         &none         &trans         &trans         &trans         &trans     &none             &none       &trans        &trans        &trans             &trans        &none         &none             
@@ -98,7 +98,7 @@
                         bindings = <
 &kp  F1       &kp  F2       &kp  F3        &kp  F4        &kp  F5        &kp  F6          &none               &none     &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  F11      &kp  F12     
 &trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &trans        &trans       
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none               &none     &trans        &trans        &trans        &trans        &trans        &trans       
+&trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &trans        &trans       
 &trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &none         &none       
 &none         &none         &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &none         &none        
                         >;
