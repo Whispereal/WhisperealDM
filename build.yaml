@@ -14,36 +14,36 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: WhispersDactylManuform_left
+    shield: ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
 include:
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_left
+    shield:  ergodash_left
   - board: nice_nano_v2
-    shield:  WhispersDactylManuform_right
+    shield:  ergodash_right
