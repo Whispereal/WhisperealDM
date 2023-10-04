@@ -37,7 +37,7 @@
 &kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G        &none            &none      &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT       
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &none            &none      &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH      
 &none         &none         &kp  LBKT     &kp  RBKT     &mo  FIRST    &kp  SPACE    &none            &none      &kp  RET      &mo  SECOND   &kp  MINUS    &kp  EQUAL    &none         &none         
-&none         &none         &kp  LCTRL    &kp  N1       &kp  LALT     &kp  CAPS    &none            &none      &mo  THIRD    &kp  DEL      &kp  LWIN     &kp  GRAVE     &none         &none             
+&none         &none         &kp  LCTRL    &kp  N1       &kp  LALT     &kp  CAPS     &none            &none      &mo  THIRD    &kp  DEL      &kp  LWIN     &kp  GRAVE     &none         &none             
                         >;
                 };
                 FIRST_layer {
