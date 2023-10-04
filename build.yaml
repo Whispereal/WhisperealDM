@@ -14,36 +14,36 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: Whisper'sDactylManuform_left
+    shield: WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
 include:
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_left
+    shield:  WhispersDactylManuform_left
   - board: nice_nano_v2
-    shield:  Whisper'sDactylManuform_right
+    shield:  WhispersDactylManuform_right
