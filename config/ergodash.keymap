@@ -7,14 +7,42 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 
-#define DEFAULT 0
-#define FIRST   1
-#define SECOND  2
-#define THIRD   3
+
 
 / {
+
+    macros {
+        macro_underscore: macro_underscore {    //下划线宏
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT &mo 1>
+                , <&macro_tap &kp KP_N9 &kp KP_N5>
+                , <&macro_release &kp LALT &mo 1>
+                ;
+        };
+        macro_multiply: macro_multiply {    //乘号宏
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT &mo 1>
+                , <&macro_tap &kp KP_N2 &kp KP_N1 &kp KP_N5>
+                , <&macro_release &kp LALT &mo 1>
+                ;
+        };      
+        macro_todo: macro_todo {    //Todo宏
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp KP_MINUS &kp SPACE &kp LBKT &kp SPACE &kp RBKT &kp SPACE>
+                ;
+        };      
+    };
+
+
+
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -34,8 +62,8 @@
  */
                         bindings = < 
 &kp  ESC      &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T        &none            &none      &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC       
-&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G        &none            &none      &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT       
-&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &none            &none      &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH      
+&kp  TAB      &kp  A        &kp  S        &kp  D        &lt 3 F        &kp  G        &none            &none      &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  SQT       
+&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &lt 5 B        &none            &none      &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  BSLH      
 &none         &none         &kp  LBKT     &kp  RBKT     &mo  FIRST    &kp  SPACE    &none            &none      &kp  RET      &mo  SECOND   &kp  MINUS    &kp  EQUAL    &none         &none         
 &none         &none         &kp  LCTRL    &kp  N1       &kp  LALT     &kp  CAPS     &none            &none      &mo  THIRD    &kp  DEL      &kp  LWIN     &kp  GRAVE     &none         &none             
                         >;
@@ -54,11 +82,11 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&bt BT_CLR         &none                    &trans         &kp  UP        &trans         &kp  LBRC     &none           &none      &kp  RBRC        &kp  KP_N7        &kp  KP_N8        &kp  KP_N9        &trans               &trans            
-&none        &trans                   &kp  LEFT      &kp  DOWN      &kp  RIGHT     &kp  LPAR     &none           &none      &kp  RPAR        &kp  KP_N4        &kp  KP_N5        &kp  KP_N6        &kp  KP_MULTIPLY     &kp  KP_PLUS       
-&none              &bt BT_SEL 0             &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4  &none           &none      &trans           &kp  KP_N1        &kp  KP_N2        &kp  KP_N3        &kp  KP_DIVIDE       &kp  KP_MINUS       
-&none                   &none                    &trans         &trans         &trans         &trans        &none           &none      &trans           &trans            &kp  KP_N0        &kp  KP_DOT       &none                &none             
-&none                   &none                    &trans         &trans         &trans         &trans        &none           &none      &trans           &trans            &trans            &trans            &none                &none             
+&trans         &none              &trans         &kp  UP        &trans         &kp  LBRC     &none           &none      &kp  RBRC        &kp  KP_N7        &kp  KP_N8        &kp  KP_N9        &trans               &trans            
+&none          &trans             &kp  LEFT      &kp  DOWN      &kp  RIGHT     &kp  LPAR     &none           &none      &kp  RPAR        &kp  KP_N4        &kp  KP_N5        &kp  KP_N6        &kp  KP_MULTIPLY     &kp  KP_PLUS       
+&none          &trans             &trans         &trans         &trans         &trans        &none           &none      &trans           &kp  KP_N1        &kp  KP_N2        &kp  KP_N3        &kp  KP_DIVIDE       &kp  KP_MINUS       
+&none          &none              &trans         &trans         &trans         &trans        &none           &none      &trans           &trans            &kp  KP_N0        &kp  KP_DOT       &none                &none             
+&none          &none              &trans         &trans         &trans         &trans        &none           &none      &trans           &trans            &trans            &trans            &none                &none             
                          >;
                }; 
                 second_layer {
@@ -82,7 +110,7 @@
 &none         &none         &trans         &trans         &trans         &trans     &none             &none       &trans        &trans        &trans             &trans        &none         &none             
                         >;
                 };
-                third_layer {
+                founction_layer {
 /* .----------------------------------------------------------------------------------------------------------------------.
  * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
@@ -96,12 +124,173 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
                         bindings = <
-&kp  F1       &kp  F2       &kp  F3        &kp  F4        &kp  F5        &kp  F6          &none               &none     &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  F11      &kp  F12     
-&trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &trans        &trans       
+&trans       &trans        &trans         &trans         &trans         &trans            &none               &none     &kp F7        &kp F8        &kp F9        &kp F10       &kp F11      &kp F12     
+&trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6
 &trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &trans        &trans       
 &trans        &trans        &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &none         &none       
 &none         &none         &trans         &trans         &trans         &trans           &none               &none     &trans        &trans        &trans        &trans        &none         &none        
                         >;
                 };
+                lock_layer {
+/* .----------------------------------------------------------------------------------------------------------------------.
+ * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * | Shift|      |      |      |      |      |      |                    |      |      |      |      | Boot | Reset| Shift|
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * | Ctlr |      |      |  Win |||||||| Alt  |      | Lower|||||||| Raise|      | RAlt ||||||||      |      |      | RCtrl|
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */ /* FIXME boot and reset are not yet locale aware */
+                        bindings = <
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none       &none         &none     
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none        
+                        >;
+                };
+                bluetooth_layer {
+/* .----------------------------------------------------------------------------------------------------------------------.
+ * |      | BT 0 | BT 1 | BT 2 | BT 3 |      | BTCL |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * | Shift|      |      |      |      |      |      |                    |      |      |      |      | Boot | Reset| Shift|
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * | Ctlr |      |      |  Win |||||||| Alt  |      | Lower|||||||| Raise|      | RAlt ||||||||      |      |      | RCtrl|
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */ /* FIXME boot and reset are not yet locale aware */
+                        bindings = <
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none       &none         &none     
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none       
+&none        &none        &none         &none         &none         &none           &none               &none     &none        &none        &none        &none        &none        &none        
+                        >;
+                };
         };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_underscore {  //调用下划线
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            bindings = <&macro_underscore>;
+            layers = <0>;
+        };
+        combo_minus {   //调用减号or中划线
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp KP_MINUS>;
+            layers = <0>;
+        };       
+        combo_LeftBrace {   //双击左大括号
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };    
+        combo_RightBrace {  //双击右大括号
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+        };        
+        combo_LeftParenthesis { //双击左圆括号
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };          
+        combo_RightParenthesis {    //双击右圆括号
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp RPAR>;
+            layers = <0>;
+        };   
+        combo_LeftBracket { //双击左中括号
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+        };    
+        combo_RightBracket {    //双击右圆括号
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp RBKT>;
+            layers = <0>;
+        };             
+        combo_tilde {   //shift+_,根据输入法中英文状态输出不同
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp UNDER>;
+            layers = <0>;
+        };       
+        combo_multiply {    //快速输入乘号
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&macro_multiply>;
+            layers = <0>;
+        };   
+        combo_lock {    //进入or退出锁定层
+            timeout-ms = <100>;
+            key-positions = <6 21 39>;
+            bindings = <&tog 4>;
+        };   
+        combo_LeftBackSpace {   //同时按下B和S，左手退格键
+            timeout-ms = <50>;
+            key-positions = <14 29>;
+            bindings = <&kp BSPC>;
+            layers = <0>;
+        };   
+        combo_todo {    //快速输入markdown待办框  同时按下T和D
+            timeout-ms = <50>;
+            key-positions = <5 15>;
+            bindings = <&macro_todo>;
+            layers = <0>;
+        };   
+        combo_bt0 { //蓝牙文件1；使用方法：长按B进入当前层（保持不松手），左手ESC+切层键+右手9键对应数字（0~4）
+            timeout-ms = <100>;
+            key-positions = <0 37 41>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <5>;
+        };   
+        combo_bt1 {
+            timeout-ms = <100>;
+            key-positions = <0 31 37>;
+            bindings = <&bt BT_SEL 1>;
+            layers = <5>;
+        };   
+        combo_bt2 {
+            timeout-ms = <100>;
+            key-positions = <0 32 37>;
+            bindings = <&bt BT_SEL 2>;
+            layers = <5>;
+        };   
+        combo_bt3 {
+            timeout-ms = <100>;
+            key-positions = <0 33 37>;
+            bindings = <&bt BT_SEL 3>;
+            layers = <5>;
+        };   
+        combo_bt4 {
+            timeout-ms = <100>;
+            key-positions = <0 19 37>;
+            bindings = <&bt BT_SEL 4>;
+            layers = <5>;
+        };   
+        combo_BtClr {   //清除当前选中蓝牙配置文件；使用方法：长按B进入当前层（保持不松手），左手C+切层键+右手L键
+            timeout-ms = <100>;
+            key-positions = <21 27 37>;
+            bindings = <&bt BT_CLR>;
+            layers = <5>;
+        };    
+};
+
+
 };
